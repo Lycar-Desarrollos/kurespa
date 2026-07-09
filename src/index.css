@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-brand-cream: #FAF8F5;
+  --color-brand-sand: #F3ECE3;
+  --color-brand-sage: #2C3E35;
+  --color-brand-sage-light: #4A6356;
+  --color-brand-navy: #1A2B35;
+  --color-brand-navy-light: #2D4350;
+  --color-brand-earth: #8C7765;
+  --color-brand-gold: #C2A478;
+  --color-brand-charcoal: #2C2B29;
+  --color-brand-taupe: #5F5B56;
+  
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-fade-in: fade-in 1.2s ease-out forwards;
+  
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-sand selection:text-brand-navy;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Glassmorphism glass navigation layer helper */
+.glass-header {
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(44, 62, 53, 0.05);
+}
+
+/* Custom scrollbar for premium touch */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C2A478;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8C7765;
+}
